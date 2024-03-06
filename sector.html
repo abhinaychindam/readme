@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- font awesome cdn link -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- custom css file link -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600&display=swap');
+
+*{
+font-family: 'Nunito', sans-serif;
+margin:0; padding:0;
+box-sizing: border-box;
+outline: none; border:none;
+text-decoration: none;
+transition: all .2s linear;
+text-transform: capitalize;
+}
+
+html{
+font-size: 62.5%;
+overflow-x: hidden;
+}
+
+body{
+background: #eee;
+}
+
+.container{
+max-width: 1200px;
+margin:0 auto;
+padding:3rem 2rem;
+}
+
+.container .title{
+font-size: 3.5rem;
+color:#444;
+margin-bottom: 3rem;
+text-transform: uppercase;
+text-align: center;
+}
+
+.container .products-container{
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+gap:2rem;
+}
+
+.container .products-container .product{
+text-align: center;
+padding:3rem 2rem;
+background: #fff;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+outline: .1rem solid #ccc;
+outline-offset: -1.5rem;
+cursor: pointer;
+}
+
+.container .products-container .product:hover{
+outline: .2rem solid #222;
+outline-offset: 0;
+}
+
+.container .products-container .product img{
+height: 25rem;
+}
+
+.container .products-container .product:hover img{
+transform: scale(.9);
+}
+
+.container .products-container .product h3{
+padding:.5rem 0;
+font-size: 2rem;
+color:#444;
+}
+
+.container .products-container .product:hover h3{
+color:#27ae60;
+}
+
+.container .products-container .product .price{
+font-size: 2rem;
+color:#444;
+}
+
+.products-preview{
+position: fixed;
+top:0; left:0;
+min-height: 100vh;
+width: 100%;
+background: rgba(0,0,0,.8);
+display: none;
+align-items: center;
+justify-content: center;
+}
+
+.products-preview .preview{
+display: none;
+padding:2rem;
+text-align: center;
+background: #fff;
+position: relative;
+margin:2rem;
+width: 40rem;
+}
+
+.products-preview .preview.active{
+display: inline-block;
+}
+
+.products-preview .preview img{
+height: 30rem;
+}
+
+.products-preview .preview .fa-times{
+position: absolute;
+top:1rem; right:1.5rem;
+cursor: pointer;
+color:#444;
+font-size: 4rem;
+}
+
+.products-preview .preview .fa-times:hover{
+transform: rotate(90deg);
+}
+
+.products-preview .preview h3{
+color:#444;
+padding:.5rem 0;
+font-size: 2.5rem;
+}
+
+.products-preview .preview .stars{
+padding:1rem 0;
+font-size: 1.7rem;
+}
+
+.products-preview .preview .stars i{
+color:#27ae60;
+}
+
+.products-preview .preview .stars span{
+color:#999;
+}
+
+.products-preview .preview p{
+line-height: 1.5;
+padding:1rem 0;
+font-size: 1.6rem;
+color:#777;
+}
+
+.products-preview .preview .price{
+padding:1rem 0;
+font-size: 2.5rem;
+color:#27ae60;
+}
+
+.products-preview .preview .buttons{
+display: flex;
+gap:1.5rem;
+flex-wrap: wrap;
+margin-top: 1rem;
+}
+
+.products-preview .preview .buttons a{
+flex:1 1 16rem;
+padding:1rem;
+font-size: 1.8rem;
+color:#444;
+border:.1rem solid #444;
+}
+
+.products-preview .preview .buttons a.cart{
+background: #444;
+color:#fff;
+}
+
+.products-preview .preview .buttons a.cart:hover{
+background: #111;
+}
+
+.products-preview .preview .buttons a.buy:hover{
+background: #444;
+color:#fff;
+}
+#background-video {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  min-width: auto;
+  min-height: auto;
+  z-index: -1;
+}
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.sector {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  left: 100px;
+}
+
+.sector-photo img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.sector-video video {
+  width: 50%;
+  height: auto;
+  align-items: center;
+  left: 50px;
+  margin-left: 300px;
+}
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+  }
+  
+
+
+
+@media (max-width:991px){
+
+html{
+font-size: 55%;
+}
+
+}
+
+@media (max-width:768px){
+
+.products-preview .preview img{
+height: 25rem;
+}
+
+}
+
+@media (max-width:450px){
+
+html{
+font-size: 50%;
+}
+
+} 
+</style>
+
+<!-- custom js file link -->
+<script src="gallery.js" defer></script>
+
+</head>
+<body>
+    <header>
+        <title>EnviroRenewal</title>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="sector.html">Sectors</a></li>
+            <li><a href="complaint.html">Complain</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
+      </header>
+     
+
+<div class="container">
+
+<h3 class="title"> Recycling  companies</h3>
+
+<div class="products-container">
+
+<div class="product" data-name="p-1">
+<img src="images/1.png" alt="">
+<h3><a href="https://goonj.org/our-offices/">Goonj</a></h3>
+<div class="person">Works in multiple areas of rural development with a focus on transforming discarded urban material into useful resources for villages</div>
+</div>
+
+<div class="product" data-name="p-2">
+<img src="images/2.png" alt="">
+<h3><a herf="https://www.chintan-india.org/contact-us">Chintan Environmental Research and Action Group</a>
+</h3>
+<div class="person">Focuses on sustainability via the lens of circular economy, climate change, waste management and air pollution</div>
+</div>
+
+<div class="product" data-name="p-3">
+<img src="images/3.png" alt="">
+<h3><a herf="https://www.sahyadrifoundation.co.in/contact.html">Sahyadri Gramin Vikas Va Bahuuddeshiya Yuvak Kalyan Sanstha
+</a></h3>
+<div class="person">Enables communities through diverse programs, enhancing livelihoods, and fostering development
+
+</div>
+</div>
+
+<div class="product" data-name="p-4">
+<img src="images/4.png" alt="">
+<h3><a herf="https://goodwillindia.org.in/contact.php">More Welfare Trust</a></h3>
+<div class="person">Empowers underprivileged communities by fulfilling basic needs, distributing used clothes, providing employment, and supporting education, creating positive social change</div>
+</div>
+
+<div class="product" data-name="p-5">
+<img src="images/5.png" alt="">
+<h3><a href="https://recycleindiafoundation.com/contact.php">Recycle India Foundation</a></h3>
+<div class="person">Promotes environmental healing through recycling and awareness for a sustainable future</div>
+</div>
+
+<div class="product" data-name="p-6">
+<img src="images/6.png" alt="">
+<h3><a href="https://www.dailydump.org/pages/contact-dailydump">Daily Dump</a></h3>
+<div class="person">Inspires sustainable living through innovative composting solutions, empowering urbanites as environmental stewards
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="container">
+    <h1 class="title">Recycling videos
+
+    </h1>
+   
+      <div class="sector-video">
+        <video width="320" height="240" controls>
+          <source src="sector-video1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="sector-video">
+        <video width="320" height="240" controls>
+          <source src="sector-video2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
+
+</div>
+
+
+</body>
+</html>  

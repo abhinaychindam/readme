@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+
+  <title>EnviroRenewal</title>
+
+  <style>
+
+    header{
+      text-align: center;
+      font-size: large;
+    }
+    .card-title {
+            color: #262626;
+            font-size: 1.8em;
+            line-height: normal;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+        }
+
+        .small-desc {
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: 1.5em;
+            color: #452c2c;
+        }
+
+        .go-corner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            width: 2em;
+            height: 2em;
+            overflow: hidden;
+            top: 0;
+            right: 0;
+            background: linear-gradient(135deg, #6293c8, #384c6c);
+            border-radius: 0 4px 0 32px;
+        }
+
+        .go-arrow {
+            margin-top: -4px;
+            margin-right: -4px;
+            color: white;
+            font-family: courier, sans;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card {
+            display: flex;
+            
+            position: relative;
+            max-width: 500px;
+            max-height: 400px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+
+
+            
+
+            background-color: #f2f8f9;
+            border-radius: 20px;
+            padding: 2em 1.2em;
+            margin: 12px;
+            text-decoration: none;
+            z-index: 0;
+            overflow: scroll;
+            background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .card:before {
+            content: '';
+            
+            position: absolute;
+            z-index: -1;
+            top: -16px;
+            right: -16px;
+            background: linear-gradient(135deg, #364a60, #384c6c);
+            height: 32px;
+            width: 32px;
+            border-radius: 70px;
+            transform: scale(1);
+            transform-origin: 50% 50%;
+            transition: transform 0.35s ease-out;
+        }
+        .card:hover{
+            transform: scale(1.03);
+        }
+
+        .card:hover:before {
+            transform: scale(50);
+        }
+        .card:hover .go-arrow{
+            transform: translateX(5px);
+        }
+
+
+        .card:hover .small-desc {
+            transition: all 0.5s ease-out;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card:hover .card-title {
+            transition: all 0.5s ease-out;
+            color: #ffffff;
+        }
+  </style>
+  
+
+</head>
+<body>
+  <header >EnviroRenewal</header>
+<section class="card" id="">Card 1
+        
+<p  class="small-desc"> </p>
+    <div class="go-corner">
+        <div class="go-arrow">→</div>
+    </div>
+</section>
+<section>
+  <p>EnviroRenewal's mission is a commendable pursuit to "make giving bigger and better." Positioned as the most trusted giving platform in India, EnviroRenewal takes on the challenge of transforming the way individuals and organizations contribute to environmental sustainability. At the core of this mission is a commitment to leveraging technology to provide innovative solutions that facilitate the sale of waste products for recycling to diverse organizations, fostering trust and convenience in the process.
+
+    In a world grappling with environmental concerns and escalating waste crises, EnviroRenewal's focus on enabling waste products to find new life through recycling is both timely and impactful. By bridging the gap between those with recyclable materials and organizations in need of such resources, EnviroRenewal becomes a vital conduit for positive environmental change.
+    
+    The trust bestowed upon EnviroRenewal is a testament to its commitment to transparency, reliability, and efficiency. In an era where conscientious giving is paramount, being recognized as the most trusted giving platform is a significant achievement. It not only reflects the credibility of the platform but also instills confidence in users, encouraging greater participation in sustainable practices.
+    
+    The emphasis on convenience further sets EnviroRenewal apart. By streamlining the process of selling waste products for recycling, the platform not only makes it accessible to a wider audience but also contributes to the ease with which individuals and organizations can contribute to the greater good. This approach acknowledges the importance of user experience in driving positive change, recognizing that convenience is a powerful motivator for sustained environmental action.
+    
+    In summary, EnviroRenewal's mission to "make giving bigger and better" positions it as a pivotal player in India's quest for sustainable waste management. Through technology solutions and services, the platform not only facilitates the sale of waste products for recycling but also champions trust and convenience. In doing so, EnviroRenewal stands at the forefront of a movement towards a more sustainable and environmentally conscious future in India.</p>
+</section>
+</body>
+</html>
+
+
+
+
